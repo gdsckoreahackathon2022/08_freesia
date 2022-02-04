@@ -61,7 +61,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html/**",
                         "/v2/api-docs",
                         "/webjars/**",
-                        "/swagger-resources/**"
+                        "/swagger-resources/**",
+                        "/center",
+                        "/post/**",
+                        "/imageUpload.do",
+                        "/ckImgSubmit.do",
+                        "/posts",
+                        "/emoticon/**",
+                        "/user"
                 );
     }
 
@@ -73,7 +80,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/hello").permitAll()
                 .antMatchers("/authenticate").permitAll()
                 .antMatchers("/signup").permitAll().
-                        anyRequest().authenticated().and().
+                        //anyRequest().authenticated()
+                        and().
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
