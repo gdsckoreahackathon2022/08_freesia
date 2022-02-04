@@ -12,10 +12,10 @@ function Map(props) {
     height: 100%;
   `;
 
-  const Marker = (text) => (
+  const Marker = ({ text }) => (
     <div className={styles.marker}>
       <span style={{ fontWeight: "700", whiteSpace: "nowrap" }}>{text}</span>
-      <i className="fas fa-map-marker-alt"></i>
+      <i style={{ fontSize: "20px" }} className="fas fa-map-marker-alt"></i>
     </div>
   );
 

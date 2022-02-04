@@ -15,7 +15,7 @@ function MyPage() {
   const baseUrl = "http://localhost:8080";
 
   const getData = async () => {
-    const response = await instance.get("/user?userid=" + userid);
+    const response = await axios.get("/user?userid=" + userid);
     setNickname(response.data.nickname);
     //console.log(response);
   };
@@ -27,7 +27,7 @@ function MyPage() {
   };
 
   const onChangeClick = () => {
-    instance
+    axios
       .put("/user?userid=" + userid, { nickname: nickname })
       .then((response) => {
         console.log("changed");
