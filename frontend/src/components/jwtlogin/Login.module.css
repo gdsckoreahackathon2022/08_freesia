@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  margin: 20px;
+}
+
+.title h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 10px;
+  z-index: 1;
+}
+
+.title span {
+  color: grey;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.imgFreesia {
+  position: absolute;
+  top: -50px;
+  width: 500px;
+  opacity: 60%;
+  z-index: 0;
+}
+
+.goSignUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goSignUp span,
+.goSignUp a {
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+}
+
+.goSignUp a {
+  text-decoration: underline;
+  margin-left: 5px;
+}

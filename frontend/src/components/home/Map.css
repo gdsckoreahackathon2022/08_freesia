@@ -1,0 +1,11 @@
+.marker {
+  position: absolute;
+  font-size: 30px;
+}
+
+.marker:hover {
+  padding: 2px;
+  z-index: 1;
+  font-size: 40px;
+  top: 0;
+}
