@@ -12,7 +12,7 @@ function MyPage() {
   console.log("재실행");
 
   const userid = localStorage.getItem("authenticatedUser");
-  const baseUrl = "http://34.64.86.102:8080";
+  const baseUrl = "http://localhost:8080";
 
   const getData = async () => {
     const response = await axios.get("/user?userid=" + userid);
