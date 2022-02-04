@@ -38,8 +38,7 @@ export default function Create() {
           const body = new FormData();
           loader.file.then((file) => {
             body.append("files", file);
-            fetch(`${API_URL}/${UPLOAD_ENDPOINT}`, {
-              method: "post",
+            instance.post(`${API_URL}/${UPLOAD_ENDPOINT}`, {
               body: body
             })
               .then((res) => res.json())
