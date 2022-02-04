@@ -78,7 +78,14 @@
   margin-right: 20px;
 }
 
+.option {
+  color: gray;
+  cursor: pointer;
+  position: relative;
+}
+
 .menu {
+  position: absolute;
   text-align: center;
   background-color: white;
   padding: 10px 20px;
@@ -86,7 +93,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   position: absolute;
   right: 70px;
-  top: 200px;
+  top: 280px;
   visibility: hidden;
 }
 
@@ -119,7 +126,8 @@
 
 /* Create */
 .editor {
-  margin: 0 30px;
+  margin: 100px 80px;
+  display: block;
 }
 
 .editorTitle {

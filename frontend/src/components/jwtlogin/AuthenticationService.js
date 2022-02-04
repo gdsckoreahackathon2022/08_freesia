@@ -36,6 +36,7 @@ class AuthenticationService {
           config.headers["Authorization"] = "Bearer " + token;
         }
         // config.headers['Content-Type'] = 'application/json';
+        console.log(config.headers["Authorization"]);
         return config;
       },
       (error) => {
@@ -49,7 +50,7 @@ class AuthenticationService {
     localStorage.removeItem("token");
   }
 
-  isUserLoggedInt() {
+  isUserLoggedIn() {
     const token = localStorage.getItem("token");
     console.log("===UserLoggedInCheck===");
     console.log(token);
