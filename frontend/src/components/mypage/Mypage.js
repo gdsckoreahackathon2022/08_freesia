@@ -15,7 +15,7 @@ function MyPage() {
   const baseUrl = "http://localhost:8080";
 
   const getData = async () => {
-    const response = await axios.get("/user?userid=" + userid);
+    const response = await instance.get("/user?userid=" + userid);
     setNickname(response.data.nickname);
     //console.log(response);
   };
@@ -27,7 +27,7 @@ function MyPage() {
   };
 
   const onChangeClick = () => {
-    axios
+    instance
       .put("/user?userid=" + userid, { nickname: nickname })
       .then((response) => {
         console.log("changed");
@@ -42,7 +42,7 @@ function MyPage() {
         <div className={styles.nickname}>
           <input
             className={styles.nicknameInput}
-            value={nickname}
+            value={nickname || ""}
             onChange={onChange}
           ></input>
           <button onClick={onChangeClick}>Change</button>

@@ -4,6 +4,7 @@ import NavBar from "../navbar/Navbar";
 import CenterList from "./CenterList";
 import Map from "./Map";
 import styled from "styled-components";
+import instance from "../jwtlogin/Request";
 import axios from "axios";
 import AuthenticationService from "../jwtlogin/AuthenticationService";
 
@@ -13,15 +14,13 @@ function Home() {
   const [searchedCity, setSearchedCity] = useState("");
   const [focusedLat, setFocusedLat] = useState(37);
   const [focusedLng, setFocusedLng] = useState(126);
-  const [address, setAddress] = useState("");
-
-  console.log("재실행");
 
   useEffect(() => {
-    fetch(
-      "http://localhost:8080/center?address=" + "서울특별시"
-      //"https://api.odcloud.kr/api/3034802/v1/uddi:b02570f5-750f-4d94-b071-eaacf44da22d_201909181751?page=1&perPage=185&serviceKey=etVnzaMzHlob02q94TO5AKnU9E28jM5XuzNYCQ%2FbQgKuLZGisLMCg2X6pJirrfPuv%2FAQ9M%2Fi1KPtOEFxn13jxQ%3D%3D"
-    )
+    instance
+      .get(
+        "/center?address=" + "서울특별시"
+        //"https://api.odcloud.kr/api/3034802/v1/uddi:b02570f5-750f-4d94-b071-eaacf44da22d_201909181751?page=1&perPage=185&serviceKey=etVnzaMzHlob02q94TO5AKnU9E28jM5XuzNYCQ%2FbQgKuLZGisLMCg2X6pJirrfPuv%2FAQ9M%2Fi1KPtOEFxn13jxQ%3D%3D"
+      )
       .then((response) => response.json())
       .then((json) => {
         setAllCenters(json);
@@ -37,7 +36,7 @@ function Home() {
         center.lat = lat;
         center.lng = lng;
         center.locationExistence = true;
-        //console.log(center);
+        console.log(center);
       },
       (error) => {
         center.locationExistence = false;
