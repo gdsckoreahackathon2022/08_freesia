@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function List({ allCenters, setFocusedCenter }) {
+function CenterList({ allCenters, setFocusedCenter }) {
   const ListWrapper = styled.article`
     height: 100%;
     overflow: auto;
@@ -9,6 +9,7 @@ function List({ allCenters, setFocusedCenter }) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     height: 120px;
     padding-bottom: 15px;
     border-top: 1px solid #dddddd;
@@ -30,13 +31,19 @@ function List({ allCenters, setFocusedCenter }) {
             });
           }}
         >
-          <h3>{center["센터명"]}</h3>
-          <span>{center["전화번호"]}</span>
-          <span>{center["주소"]}</span>
+          <h3>{center.name}</h3>
+          <span>{center.contact}</span>
+          <a
+            style={{ textDecoration: "none", color: "black" }}
+            href={center.websiteUrl}
+          >
+            {center.websiteUrl}
+          </a>
+          <span style={{ fontSize: "14px" }}>{center.address}</span>
         </ListWrap>
       ))}
     </ListWrapper>
   );
 }
 
-export default List;
+export default CenterList;
