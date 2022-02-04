@@ -7,6 +7,40 @@
   align-items: center;
 }
 
-.profile i {
+.profile i:first-child {
   font-size: 100px;
+}
+
+.nickname {
+  margin: 20px 0;
+  font-size: 20px;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nickname button {
+  background-color: transparent;
+  font-weight: 400;
+}
+
+.nicknameInput {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: none;
+  text-align: center;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.nickname input {
+  border-bottom: 2px solid #000;
+}
+
+.nickname input:focus {
+  outline: none;
 }

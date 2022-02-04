@@ -64,11 +64,10 @@ function Map(props) {
         defaultZoom={11}
         style={{ position: "relative", width: "100%", height: "100%" }}
       >
-        {allCenters.map((center, index) => {
+        {allCenters.map((center) => {
           return center.locationExistence ? (
-            <Marker key={index} lat={center.lat} lng={center.lng} />
+            <Marker key={center.id} lat={center.lat} lng={center.lng} />
           ) : null;
-          //console.log("no")
         })}
       </GoogleMapReact>
     </GoogleMapWrap>
