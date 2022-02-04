@@ -1,15 +1,24 @@
 import axios from "axios";
 
 class AuthenticationService {
-
   // 회원가입 시 서버에 정보 전송
   executeSignupService(username, nickname, userid, password, email, contact) {
-    return axios.post("http://localhost:8080/signup", { username, nickname, userid, password, email, contact });
+    return axios.post("http://localhost:8080/signup", {
+      username,
+      nickname,
+      userid,
+      password,
+      email,
+      contact,
+    });
   }
 
   // 로그인 시 서버에 id, pw 전송
   executeJwtAuthenticationService(userid, password) {
-    return axios.post("http://localhost:8080/authenticate", { userid, password });
+    return axios.post("http://localhost:8080/authenticate", {
+      userid,
+      password,
+    });
   }
 
   executeHelloService() {
@@ -48,6 +57,7 @@ class AuthenticationService {
   logout() {
     localStorage.removeItem("authenticatedUser");
     localStorage.removeItem("token");
+    window.location.href = "/login";
   }
 
   isUserLoggedIn() {

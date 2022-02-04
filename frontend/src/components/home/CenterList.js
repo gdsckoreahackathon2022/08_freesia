@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function List({ allCenters, setFocusedCenterId }) {
+function List({ allCenters, setFocusedCenter }) {
   const ListWrapper = styled.article`
     height: 100%;
     overflow: auto;
@@ -16,10 +16,20 @@ function List({ allCenters, setFocusedCenterId }) {
       box-shadow: 3px 3px 20px lightgrey;
     }
   `;
+
   return (
     <ListWrapper>
       {allCenters.map((center) => (
-        <ListWrap key={center.id}>
+        <ListWrap
+          key={center.id}
+          onMouseEnter={() => {
+            setFocusedCenter({
+              id: center.id,
+              lat: center.lat,
+              lng: center.lng,
+            });
+          }}
+        >
           <h3>{center["센터명"]}</h3>
           <span>{center["전화번호"]}</span>
           <span>{center["주소"]}</span>

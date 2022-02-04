@@ -34,8 +34,8 @@ function Map(props) {
   );
 
   const defaultLocation = {
-    lat: 38.54,
-    lng: 127.04,
+    lat: 37.5,
+    lng: 127,
   };
 
   //console.log(allCenters);

@@ -19,21 +19,16 @@ public class Posts extends BaseTimeEntity {
 
     private String uid; //작성자 아이디
 
-    @Column(length = 500, nullable = false)
-    private String title; //글 제목
-
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content; //글 내용
 
     @Builder
-    public Posts(String uid, String title, String content){
+    public Posts(String uid, String content){
         this.uid = uid;
-        this.title = title;
         this.content = content;
     }
 
-    public Posts update(String title, String content){
-        this.title = title;
+    public Posts update(String content){
         this.content = content;
         return this;
     }
