@@ -12,7 +12,11 @@
 
 ## 주요 기능
 ### 재교육/취업 기관 지도 API 서비스 - Google Map API 활용
+![image](https://user-images.githubusercontent.com/61882016/152600093-e962b551-c8e1-4055-9dd6-94337bb63d38.png)
+
 ### 챌린지 게시판을 통한 동기부여
+![image](https://user-images.githubusercontent.com/61882016/152600316-cabbd13e-4df1-4701-a07d-6c1644d8005a.png)
+![image](https://user-images.githubusercontent.com/61882016/152600376-7c2b0559-90c7-4ced-9fd9-70865bb120b1.png)
 
 
 ## 사용한 기술
