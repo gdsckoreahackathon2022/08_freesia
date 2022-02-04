@@ -17,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @Api(tags = {"freesia Emoticon API"}) // Swagger 최상단 Controller 명칭
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmoticonController {
 
     private final EmoticonService emoticonService;
