@@ -7,11 +7,12 @@ import freesia from "../../img/freesia.png";
 import { useEffect, useState } from "react";
 import instance from "../jwtlogin/Request";
 import parse from "html-react-parser";
+import axios from "axios";
 
 export default function List() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    instance
+    axios
       .get("/posts")
       .then(function (response) {
         setPosts(response.data);

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./Challenge.css";
+import axios from "axios";
 import instance from "../jwtlogin/Request";
 
 export default function Create() {
@@ -13,7 +14,7 @@ export default function Create() {
   // 서버에 등록
   const submitHandler = (e) => {
     e.preventDefault();
-    instance
+    axios
       .post("/post", {
         content: content,
         uid: uid,

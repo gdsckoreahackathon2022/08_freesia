@@ -6,13 +6,14 @@ import { useState } from "react/cjs/react.development";
 import Navbar from "../navbar/Navbar";
 import "./Challenge.css";
 import instance from "../jwtlogin/Request";
+import axios from "axios";
 
 export default function Edit() {
   // id에 맞는 게시글 불러오기
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    instance
+    axios
       .get("/posts")
       .then(function (response) {
         setPosts(response.data);
@@ -29,7 +30,7 @@ export default function Edit() {
 
   const editHandler = (e) => {
     e.preventDefault();
-    instance
+    axios
       .put(`/post?pid=${id}`, {
         content: content,
       })
