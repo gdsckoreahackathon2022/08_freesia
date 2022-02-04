@@ -55,7 +55,7 @@ export default function SignupForm() {
         contact
       );
       alert("Registered Successfully!");
-      // window.location.href = "/";
+      window.location.href = "/login";
     }
   };
 

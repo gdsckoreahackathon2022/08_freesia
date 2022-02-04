@@ -4,6 +4,7 @@ import "./NavBar.css";
 import "../globalstyle.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import AuthenticationService from "../jwtlogin/AuthenticationService";
 
 export default function NavBar() {
   const [isActive, setIsActive] = useState(false);
@@ -40,7 +41,12 @@ export default function NavBar() {
             </li>
             <hr />
             <li>
-              <div>Logout</div>
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={AuthenticationService.logout}
+              >
+                Logout
+              </span>
             </li>
           </ul>
         </div>
