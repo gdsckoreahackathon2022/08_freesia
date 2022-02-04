@@ -1,7 +1,7 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { useState } from 'react';
-import { Axios } from "axios";
+import axios from "axios";
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import "./Challenge.css";
@@ -14,7 +14,7 @@ export default function Create() {
   // 서버에 등록
   const submitHandler = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:8080/post", {
+    axios.post("http://localhost:8080/post", {
       content: content,
       uid: uid
     })
