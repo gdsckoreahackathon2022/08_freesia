@@ -1,7 +1,6 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { useState } from 'react';
-import axios from "axios";
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import "./Challenge.css";
@@ -28,6 +27,7 @@ export default function Create() {
       });
   };
 
+  // 이미지 업로드
   const API_URL = "http://localhost:8080";
   const UPLOAD_ENDPOINT = "imageUpload.do";
 

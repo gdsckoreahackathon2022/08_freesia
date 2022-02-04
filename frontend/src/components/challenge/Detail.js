@@ -3,11 +3,10 @@ import Navbar from '../navbar/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV, faPlusCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import "./Challenge.css";
-import freesia from "../../img/freesia.png";
 import EmojiPicker, { SKIN_TONE_NEUTRAL } from 'emoji-picker-react';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
 import instance from "../jwtlogin/Request";
+import parse from "html-react-parser";
 
 export default function Detail() {
 
@@ -100,8 +99,7 @@ export default function Detail() {
           <hr />
 
           <div className="detailContent">
-            {post.content}
-            <img src={freesia} width="100%" />
+            {parse(post.content)}
           </div>
 
           <div className="emoji">
