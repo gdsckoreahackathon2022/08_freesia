@@ -38,7 +38,7 @@ function Home() {
       });
   }, []);
 
-  Geocode.setApiKey("AIzaSyCwoSjDdglMbH8LtCqWtenmKoaWpIQbO9Y");
+  Geocode.setApiKey("AIzaSyDo4Bh5YVw1zbnlifK3lAoULUDRhHMPVus");
 
   allCenters.map((center) => {
     const address = center["센터명"];
