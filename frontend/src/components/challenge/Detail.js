@@ -31,7 +31,7 @@ export default function Detail() {
   const deleteHandler = (id, e) => {
     e.preventDefault();
     if (window.confirm("삭제하시겠습니까?")) {
-      axios.delete(`http://localhost:8080/post/${id}`)
+      axios.delete(`http://localhost:8080/post?pid=${id}`)
         .then(response => {
           alert("삭제되었습니다.");
           window.location.href = "/challenge";
