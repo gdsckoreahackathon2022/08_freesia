@@ -41,7 +41,7 @@ public class PostsService {
     public Posts update(Long id, PostsUpdateRequestDto postsUpdateRequestDto){
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
-        return posts.update(postsUpdateRequestDto.getTitle(), postsUpdateRequestDto.getContent());
+        return posts.update(postsUpdateRequestDto.getContent());
     }
 
     /*게시글 삭제*/
