@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import NavBar from "../navbar/Navbar";
 import styles from "./Mypage.module.css";
 import instance from "../jwtlogin/Request";
+import axios from "axios";
+import AuthenticationService from "../jwtlogin/AuthenticationService";
 
 function MyPage() {
   const [nickname, setNickname] = useState();
@@ -13,7 +15,7 @@ function MyPage() {
   const baseUrl = "http://34.64.86.102:8080";
 
   const getData = async () => {
-    const response = await instance.get("/user?userid=" + userid);
+    const response = await axios.get("/user?userid=" + userid);
     setNickname(response.data.nickname);
     //console.log(response);
   };
@@ -25,9 +27,11 @@ function MyPage() {
   };
 
   const onChangeClick = () => {
-    instance.put("/user?userid=" + userid, nickname).then((response) => {
-      console.log("changed");
-    });
+    axios
+      .put("/user?userid=" + userid, { nickname: nickname })
+      .then((response) => {
+        console.log("changed");
+      });
   };
 
   return (
@@ -43,7 +47,13 @@ function MyPage() {
           ></input>
           <button onClick={onChangeClick}>Change</button>
         </div>
-        <button>Logout</button>
+        <button
+          onClick={() => {
+            AuthenticationService.logout();
+          }}
+        >
+          Logout
+        </button>
       </div>
     </main>
   );

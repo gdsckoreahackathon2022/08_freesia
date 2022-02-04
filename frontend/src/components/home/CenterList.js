@@ -21,16 +21,7 @@ function CenterList({ allCenters, setFocusedCenter }) {
   return (
     <ListWrapper>
       {allCenters.map((center) => (
-        <ListWrap
-          key={center.id}
-          onMouseEnter={() => {
-            setFocusedCenter({
-              id: center.id,
-              lat: center.lat,
-              lng: center.lng,
-            });
-          }}
-        >
+        <ListWrap key={center.id}>
           <h3>{center.name}</h3>
           <span>{center.contact}</span>
           <a
