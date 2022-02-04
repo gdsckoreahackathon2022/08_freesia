@@ -1,7 +1,6 @@
 package com.freesia.imyourfreesia.web;
 
 import com.freesia.imyourfreesia.domain.emoticon.Emoticon;
-import com.freesia.imyourfreesia.domain.emoticon.EmoticonRepository;
 import com.freesia.imyourfreesia.service.EmoticonService;
 import com.freesia.imyourfreesia.web.dto.emoticon.EmoticonSaveRequestDto;
 import io.swagger.annotations.Api;

@@ -1,6 +1,5 @@
 package com.freesia.imyourfreesia.web.dto.user;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 

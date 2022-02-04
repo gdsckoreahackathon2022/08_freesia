@@ -5,7 +5,6 @@ import com.freesia.imyourfreesia.service.CustomUserDetailsService;
 import com.freesia.imyourfreesia.web.dto.user.LoginDto;
 import com.freesia.imyourfreesia.web.dto.user.TokenDto;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
