@@ -17,7 +17,7 @@
 ![image](https://user-images.githubusercontent.com/61882016/152617565-4c789208-28ae-4161-8faa-29085f7be02a.png)
 
 ### 챌린지 게시판을 통한 동기부여
-![image](https://user-images.githubusercontent.com/61882016/152600316-cabbd13e-4df1-4701-a07d-6c1644d8005a.png)
+![image](https://user-images.githubusercontent.com/61882016/152617807-8047d9da-6463-4df8-b1b8-5679d607003c.png)
 ![image](https://user-images.githubusercontent.com/61882016/152600376-7c2b0559-90c7-4ced-9fd9-70865bb120b1.png)
 
 
