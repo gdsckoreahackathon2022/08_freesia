@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
-@Api(tags = {"freesia Signup API"}) // Swagger 최상단 Controller 명칭
+@Api(tags = {"freesia Signup / User API"}) // Swagger 최상단 Controller 명칭
 public class UserController {
     private final UserService userService;
 

@@ -21,23 +21,21 @@ import java.util.List;
 public class EmoticonController {
 
     private final EmoticonService emoticonService;
-    private final EmoticonRepository emoticonRepository;
 
-    @PostMapping("/emotion")
+    @PostMapping("/emoticon")
     @ApiOperation(value = "이모티콘 추가", notes = "이모티콘 추가 API")
-    @ApiImplicitParam(name = "emotionSaveRequestDto", value = "이모티콘 저장 dto")
     public ResponseEntity<Long> save(@RequestBody EmoticonSaveRequestDto emotionSaveRequestDto) {
         return ResponseEntity.ok(emoticonService.save(emotionSaveRequestDto));
     }
 
-    @GetMapping("/emotion")
+    @GetMapping("/emoticon")
     @ApiOperation(value = "글에 따른 이모티콘 조회", notes = "글에 따른 이모티콘 조회 API")
     @ApiImplicitParam(name = "pid", value = "글 아이디")
     public ResponseEntity<List<Emoticon>> findByPid(@RequestParam Long pid) {
         return ResponseEntity.ok(emoticonService.findByPid(pid));
     }
 
-    @DeleteMapping("/emotion")
+    @DeleteMapping("/emoticon")
     @ApiOperation(value = "글에 따른 이모티콘 삭제", notes = "글에 따른 이모티콘 삭제 API")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "pid", value = "글 아이디"),

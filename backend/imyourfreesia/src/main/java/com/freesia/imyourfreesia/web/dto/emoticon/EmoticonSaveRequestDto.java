@@ -3,7 +3,11 @@ package com.freesia.imyourfreesia.web.dto.emoticon;
 import com.freesia.imyourfreesia.domain.emoticon.Emoticon;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@NoArgsConstructor
 public class EmoticonSaveRequestDto {
 
     @ApiModelProperty(example = "글 아이디")
