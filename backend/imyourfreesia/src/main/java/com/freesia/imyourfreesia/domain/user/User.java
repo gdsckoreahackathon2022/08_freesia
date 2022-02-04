@@ -1,6 +1,7 @@
 package com.freesia.imyourfreesia.domain.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.freesia.imyourfreesia.domain.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,7 +14,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User extends BaseTimeEntity {
 
     @JsonIgnore
     @Id // PK
@@ -48,4 +49,18 @@ public class User {
             joinColumns = {@JoinColumn(name = "id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
     private Set<Authority> authorities;
+
+    @Builder
+    public User(String userid, String username, String password, String nickname, String contact, String email, boolean activated) {
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.contact = contact;
+        this.email = email;
+    }
+
+    public void update(String nickname) {
+        this.nickname = nickname;
+    }
 }
