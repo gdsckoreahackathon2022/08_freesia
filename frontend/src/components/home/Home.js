@@ -5,6 +5,7 @@ import List from "./CenterList";
 import Map from "./Map";
 import styled from "styled-components";
 import axios from "axios";
+import AuthenticationService from "../jwtlogin/AuthenticationService";
 
 /* 
 var mapOptions = {
