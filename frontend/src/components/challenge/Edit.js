@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import Navbar from '../navbar/Navbar';
 import "./Challenge.css";
+import instance from "../jwtlogin/Request";
 
 export default function Edit() {
 
@@ -13,7 +14,7 @@ export default function Edit() {
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/posts")
+    instance.get("/posts")
       .then(function (response) {
         setPosts(response.data);
       })
@@ -29,7 +30,7 @@ export default function Edit() {
 
   const editHandler = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8080/post?pid=${id}`,
+    instance.put(`/post?pid=${id}`,
       {
         content: content
       }).then(response => {

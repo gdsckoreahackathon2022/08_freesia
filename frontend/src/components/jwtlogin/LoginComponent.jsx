@@ -24,6 +24,7 @@ class LoginComponent extends Component {
   }
 
   loginClicked() {
+    // vent.preventDefault();
     AuthenticationService.executeJwtAuthenticationService(
       this.state.userid,
       this.state.password

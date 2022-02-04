@@ -6,12 +6,13 @@ import "./Challenge.css";
 import freesia from "../../img/freesia.png";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import instance from "../jwtlogin/Request";
 
 export default function List() {
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/posts")
+    instance.get("/posts")
       .then(function (response) {
         setPosts(response.data);
       }).catch(function (error) {

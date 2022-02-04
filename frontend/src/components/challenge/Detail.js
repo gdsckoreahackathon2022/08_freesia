@@ -7,6 +7,7 @@ import freesia from "../../img/freesia.png";
 import EmojiPicker, { SKIN_TONE_NEUTRAL } from 'emoji-picker-react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import instance from "../jwtlogin/Request";
 
 export default function Detail() {
 
@@ -14,7 +15,7 @@ export default function Detail() {
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/posts")
+    instance.get("/posts")
       .then(function (response) {
         setPosts(response.data);
       })
@@ -31,7 +32,7 @@ export default function Detail() {
   const deleteHandler = (id, e) => {
     e.preventDefault();
     if (window.confirm("삭제하시겠습니까?")) {
-      axios.delete(`http://localhost:8080/post?pid=${id}`)
+      instance.delete(`/post?pid=${id}`)
         .then(response => {
           alert("삭제되었습니다.");
           window.location.href = "/challenge";
