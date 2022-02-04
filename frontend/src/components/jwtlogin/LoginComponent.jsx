@@ -23,8 +23,7 @@ class LoginComponent extends Component {
     });
   }
 
-  loginClicked(event) {
-    event.preventDefault();
+  loginClicked() {
     AuthenticationService.executeJwtAuthenticationService(
       this.state.userid,
       this.state.password

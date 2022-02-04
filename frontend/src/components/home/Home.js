@@ -27,8 +27,8 @@ function Home() {
         setAllCenters(json);
       });
   }, []);
-  console.log(allCenters);
-  Geocode.setApiKey("AIzaSyCwoSjDdglMbH8LtCqWtenmKoaWpIQbO9Y");
+  
+  Geocode.setApiKey("AIzaSyDo4Bh5YVw1zbnlifK3lAoULUDRhHMPVus");
 
   allCenters.map((center) => {
     Geocode.fromAddress(center.address).then(

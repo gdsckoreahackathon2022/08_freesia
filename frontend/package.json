@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
+    "@ckeditor/ckeditor5-image": "^32.0.0",
     "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@ckeditor/ckeditor5-upload": "^32.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.17",
@@ -14,6 +16,7 @@
     "axios": "^0.25.0",
     "emoji-picker-react": "^3.5.0",
     "google-map-react": "^2.1.10",
+    "html-react-parser": "^1.4.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-geocode": "^0.2.3",

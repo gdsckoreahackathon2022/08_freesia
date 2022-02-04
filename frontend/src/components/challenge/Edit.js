@@ -1,11 +1,11 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import axios from 'axios';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import Navbar from '../navbar/Navbar';
 import "./Challenge.css";
+import instance from "../jwtlogin/Request";
 
 export default function Edit() {
 
@@ -13,7 +13,7 @@ export default function Edit() {
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/posts")
+    instance.get("/posts")
       .then(function (response) {
         setPosts(response.data);
       })
@@ -29,7 +29,7 @@ export default function Edit() {
 
   const editHandler = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8080/post?pid=${id}`,
+    instance.put(`/post?pid=${id}`,
       {
         content: content
       }).then(response => {
@@ -38,6 +38,41 @@ export default function Edit() {
       }).catch(error => {
         alert(error.response.data);
       });
+  }
+
+  // 이미지 업로드
+  const API_URL = "http://localhost:8080";
+  const UPLOAD_ENDPOINT = "imageUpload.do";
+
+  function uploadAdapter(loader) {
+    return {
+      upload: () => {
+        return new Promise((resolve, reject) => {
+          const body = new FormData();
+          loader.file.then((file) => {
+            body.append("files", file);
+            instance.post(`${API_URL}/${UPLOAD_ENDPOINT}`, {
+              body: body
+            })
+              .then((res) => res.json())
+              .then((res) => {
+                resolve({
+                  default: `${API_URL}/${res.filename}`
+                });
+              })
+              .catch((err) => {
+                reject(err);
+              });
+          });
+        });
+      }
+    };
+  }
+
+  function uploadPlugin(editor) {
+    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
+      return uploadAdapter(loader);
+    };
   }
 
   return (
