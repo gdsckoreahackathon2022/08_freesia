@@ -36,7 +36,7 @@ export default function List() {
                   <FontAwesomeIcon icon={faUserCircle} size="2x" className="userIcon" />
                   {post.uid}
                 </div>
-                <div className="title">{post.title}</div>
+                <div className="title">{post.content}</div>
               </div>
             </div>
           </Link>

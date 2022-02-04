@@ -1,6 +1,6 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import { Axios } from 'axios';
+import axios from 'axios';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
@@ -13,7 +13,7 @@ export default function Edit() {
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:8080/posts")
+    axios.get("http://localhost:8080/posts")
       .then(function (response) {
         setPosts(response.data);
       })
