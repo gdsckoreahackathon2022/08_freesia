@@ -28,7 +28,7 @@ function Home() {
       });
   }, []);
 
-  Geocode.setApiKey("AIzaSyDo4Bh5YVw1zbnlifK3lAoULUDRhHMPVus");
+  Geocode.setApiKey("AIzaSyAPEIGEf12unqTi_6if8i_okJEdgCPIeFY");
 
   allCenters.map((center) => {
     Geocode.fromAddress(center.address).then(
@@ -88,14 +88,14 @@ function Home() {
   return (
     <ListGoogleMapWrap>
       <NavBar />
-      <form style={{ marginBottom: "20px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <input
           value={searchedCity}
           type="text"
           onChange={onSearchChange}
         ></input>
         <button onClick={onSearchBtnClick}>검색</button>
-      </form>
+      </div>
       <div
         style={{
           display: "flex",
