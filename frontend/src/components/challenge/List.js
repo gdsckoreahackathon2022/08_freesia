@@ -5,7 +5,6 @@ import { faEdit, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import "./Challenge.css";
 import freesia from "../../img/freesia.png";
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import instance from "../jwtlogin/Request";
 
 export default function List() {
@@ -29,8 +28,8 @@ export default function List() {
       <div className="body">
 
         {posts.map(post => (
-          <Link to={`/post/${post.id}`}>
-            <div className="container" key={post.id}>
+          <div className="container" key={post.id}>
+            <Link to={`/post/${post.id}`}>
               <img src={freesia} className="img" />
               <div className="info">
                 <div className="nickname">
@@ -39,8 +38,8 @@ export default function List() {
                 </div>
                 <div className="title">{post.content}</div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
 
       </div>
