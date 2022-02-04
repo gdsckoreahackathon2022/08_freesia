@@ -56,6 +56,7 @@ class AuthenticationService {
         console.log(config.headers["Authorization"]);
         //}
         // config.headers['Content-Type'] = 'application/json';
+        console.log(config.headers["Authorization"]);
         return config;
       },
       (error) => {
@@ -70,7 +71,7 @@ class AuthenticationService {
     window.location.href = "/login";
   }
 
-  isUserLoggedInt() {
+  isUserLoggedIn() {
     const token = localStorage.getItem("token");
     console.log("===UserLoggedInCheck===");
     console.log(token);
