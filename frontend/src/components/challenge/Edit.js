@@ -24,6 +24,22 @@ export default function Edit() {
 
   const postList = posts.filter(post => (post.id === Number(id)));
 
+  // 글 수정
+  const [content, setContent] = useState("");
+
+  const editHandler = (e) => {
+    e.preventDefault();
+    axios.put(`http://localhost:8080/post?pid=${id}`,
+      {
+        content: content
+      }).then(response => {
+        alert("수정되었습니다.");
+        window.location.href = `/post/${id}`;
+      }).catch(error => {
+        alert(error.response.data);
+      });
+  }
+
   return (
     <div>
       <Navbar />
@@ -39,16 +55,15 @@ export default function Edit() {
             data={post.content}
             onChange={(event, editor) => {
               const data = editor.getData();
-              console.log({ event, editor, data });
+              setContent(data);
             }}
           />
 
-          <button style={{ 'marginRight': '5px' }}>Edit</button>
+          <button onClick={editHandler} style={{ 'marginRight': '5px' }}>Edit</button>
           <Link to="/challenge"><button>Cancel</button></Link>
         </div>
       ))}
 
-
-    </div >
+    </div>
   );
 }
