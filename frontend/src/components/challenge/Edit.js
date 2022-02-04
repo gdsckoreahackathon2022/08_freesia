@@ -41,7 +41,7 @@ export default function Edit() {
   }
 
   // 이미지 업로드
-  const API_URL = "http://localhost:8080";
+  const API_URL = "http://34.64.86.102:8080";
   const UPLOAD_ENDPOINT = "imageUpload.do";
 
   function uploadAdapter(loader) {
@@ -51,7 +51,7 @@ export default function Edit() {
           const body = new FormData();
           loader.file.then((file) => {
             body.append("files", file);
-            instance.post(`${API_URL}/${UPLOAD_ENDPOINT}`, {
+            instance.post(`/${UPLOAD_ENDPOINT}`, {
               body: body
             })
               .then((res) => res.json())

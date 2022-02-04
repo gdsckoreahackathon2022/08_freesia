@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import NavBar from "../navbar/Navbar";
 import styles from "./Mypage.module.css";
+import instance from "../jwtlogin/Request";
 
 function MyPage() {
   const [nickname, setNickname] = useState();
@@ -10,10 +10,10 @@ function MyPage() {
   console.log("재실행");
 
   const userid = localStorage.getItem("authenticatedUser");
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "http://34.64.86.102:8080";
 
   const getData = async () => {
-    const response = await axios.get(baseUrl + "/user?userid=" + userid);
+    const response = await instance.get("/user?userid=" + userid);
     setNickname(response.data.nickname);
     //console.log(response);
   };
@@ -25,7 +25,7 @@ function MyPage() {
   };
 
   const onChangeClick = () => {
-    axios.put(baseUrl + "/user?userid=" + userid, nickname).then((response) => {
+    instance.put("/user?userid=" + userid, nickname).then((response) => {
       console.log("changed");
     });
   };
