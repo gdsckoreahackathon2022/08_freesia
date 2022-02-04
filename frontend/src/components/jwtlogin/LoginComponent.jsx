@@ -34,7 +34,7 @@ class LoginComponent extends Component {
           response.data.token
         );
         console.log(response);
-        //window.location.href = "/";
+        window.location.href = "/";
       })
       .catch(() => {
         this.setState({ showSuccessMessage: false });

@@ -26,6 +26,7 @@ import java.util.UUID;
 @Api(tags={"freesia Posts API"})
 @RequiredArgsConstructor
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 public class PostsController {
     private final PostsService postsService;
 

@@ -6,6 +6,7 @@ import Map from "./Map";
 import styled from "styled-components";
 import axios from "axios";
 import AuthenticationService from "../jwtlogin/AuthenticationService";
+import instance from "../jwtlogin/Request";
 
 function Home() {
   const [allCenters, setAllCenters] = useState([]);
@@ -18,8 +19,8 @@ function Home() {
   console.log("재실행");
 
   useEffect(() => {
-    fetch(
-      "http://localhost:8080/center?address=" + "서울특별시"
+    instance.get(
+      "/center?address=" + "서울특별시"
       //"https://api.odcloud.kr/api/3034802/v1/uddi:b02570f5-750f-4d94-b071-eaacf44da22d_201909181751?page=1&perPage=185&serviceKey=etVnzaMzHlob02q94TO5AKnU9E28jM5XuzNYCQ%2FbQgKuLZGisLMCg2X6pJirrfPuv%2FAQ9M%2Fi1KPtOEFxn13jxQ%3D%3D"
     )
       .then((response) => response.json())

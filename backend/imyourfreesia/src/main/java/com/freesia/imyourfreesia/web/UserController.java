@@ -15,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @Api(tags = {"freesia Signup / User API"}) // Swagger 최상단 Controller 명칭
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     private final UserService userService;
 
