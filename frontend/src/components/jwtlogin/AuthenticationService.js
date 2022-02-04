@@ -26,23 +26,34 @@ class AuthenticationService {
     return axios.get("http://localhost:8080/hello");
   }
 
-  registerSuccessfulLoginForJwt(id, token) {
+  /* registerSuccessfulLoginForJwt(id, token) {
     console.log("===registerSuccesfulLoginForJwt");
     localStorage.setItem("token", token);
     localStorage.setItem("authenticatedUser", id);
     this.setupAxiosInterceptors();
+    console.log("hi");
+  } */
+  registerSuccessfulLoginForJwt(id, token) {
+    console.log("===registerSuccesfulLoginForJwt");
+    localStorage.setItem("token", token);
+    localStorage.setItem("authenticatedUser", id);
+    this.setupAxiosInterceptors(token);
+    console.log("hi");
   }
 
   createJWTToken(token) {
     return "Bearer " + token;
   }
 
-  setupAxiosInterceptors() {
+  setupAxiosInterceptors(token) {
+    console.log("hi");
     axios.interceptors.request.use(
       (config) => {
-        const token = localStorage.getItem("token");
+        //const token = localStorage.getItem("token");
         if (token) {
+          console.log(token);
           config.headers["Authorization"] = "Bearer " + token;
+          console.log(config.headers["Authorization"]);
         }
         // config.headers['Content-Type'] = 'application/json';
         return config;

@@ -23,7 +23,8 @@ class LoginComponent extends Component {
     });
   }
 
-  loginClicked() {
+  loginClicked(event) {
+    event.preventDefault();
     AuthenticationService.executeJwtAuthenticationService(
       this.state.userid,
       this.state.password
@@ -34,7 +35,7 @@ class LoginComponent extends Component {
           response.data.token
         );
         console.log(response);
-        window.location.href = "/";
+        //window.location.href = "/";
       })
       .catch(() => {
         this.setState({ showSuccessMessage: false });

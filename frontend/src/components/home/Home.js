@@ -4,6 +4,7 @@ import NavBar from "../navbar/Navbar";
 import List from "./CenterList";
 import Map from "./Map";
 import styled from "styled-components";
+import axios from "axios";
 
 /* 
 var mapOptions = {
@@ -26,14 +27,23 @@ function Home() {
 
   console.log("재실행");
 
+  var encodeStr = encodeURI(`http://localhost:8080/center`);
+  console.log(encodeStr);
+
+  var decodeStr = decodeURI(encodeStr);
+  console.log(decodeStr);
+
+  var city = escape("서울특별시");
+
   useEffect(() => {
     fetch(
-      //`http://localhost:8080/center?address=${address}`
-      "https://api.odcloud.kr/api/3034802/v1/uddi:b02570f5-750f-4d94-b071-eaacf44da22d_201909181751?page=1&perPage=185&serviceKey=etVnzaMzHlob02q94TO5AKnU9E28jM5XuzNYCQ%2FbQgKuLZGisLMCg2X6pJirrfPuv%2FAQ9M%2Fi1KPtOEFxn13jxQ%3D%3D"
+      "http://localhost:8080/center?address=" + "서울특별시"
+      //"https://api.odcloud.kr/api/3034802/v1/uddi:b02570f5-750f-4d94-b071-eaacf44da22d_201909181751?page=1&perPage=185&serviceKey=etVnzaMzHlob02q94TO5AKnU9E28jM5XuzNYCQ%2FbQgKuLZGisLMCg2X6pJirrfPuv%2FAQ9M%2Fi1KPtOEFxn13jxQ%3D%3D"
     )
       .then((response) => response.json())
       .then((json) => {
-        setAllCenters(json.data);
+        setAllCenters(json);
+        console.log(allCenters);
         setLoading(false);
       });
   }, []);
@@ -41,7 +51,7 @@ function Home() {
   Geocode.setApiKey("AIzaSyCwoSjDdglMbH8LtCqWtenmKoaWpIQbO9Y");
 
   allCenters.map((center) => {
-    const address = center["센터명"];
+    const address = center.address;
     //const address = center.address;
     center.id = center[Math.random() * 10]; // 임시
     //console.log(center);
