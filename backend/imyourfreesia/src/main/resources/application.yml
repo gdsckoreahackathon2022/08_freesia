@@ -1,23 +1,26 @@
 spring:
-  h2:
-    console:
-      enabled: true
+
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://34.64.224.127:3306/freesia?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: imyourfreesia0423
+    hikari:
+      connection-test-query: select 1 from dual
+
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
         show_sql: true
-    defer-datasource-initialization: true
+        enable_lazy_load_no_trans: true
+
 
 logging:
   level:

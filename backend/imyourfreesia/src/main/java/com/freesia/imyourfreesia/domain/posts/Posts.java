@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class Posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Long id;
 
     private String uid; //작성자 아이디
