@@ -16,7 +16,7 @@ import java.util.List;
 @Api(tags={"freesia Centers API"})
 @RequiredArgsConstructor
 @RestController
-public class CentersApiController {
+public class CentersController {
     private final CenterService centerService;
 
     /*서울 지역 새일 센터 정보 불러옴*/

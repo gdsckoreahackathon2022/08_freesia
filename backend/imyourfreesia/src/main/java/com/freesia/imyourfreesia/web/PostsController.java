@@ -26,7 +26,7 @@ import java.util.UUID;
 @Api(tags={"freesia Posts API"})
 @RequiredArgsConstructor
 @Controller
-public class PostsApiController {
+public class PostsController {
     private final PostsService postsService;
 
     /*게시글 저장*/
