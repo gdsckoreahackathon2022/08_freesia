@@ -33,7 +33,10 @@
 ### - 챌린지 게시판을 통한 동기부여<br/>
 ![create](https://user-images.githubusercontent.com/87821678/152629038-88b75100-9cbe-4e57-9d1e-6995a87ebdec.PNG)
 ![list](https://user-images.githubusercontent.com/87821678/152629037-0fccd2ad-6eb7-4b78-bee8-9434ab38f2d5.PNG)
-![post](https://user-images.githubusercontent.com/87821678/152629036-c2583815-3691-4e2b-bbeb-de86e8d8331d.PNG)<br>
+![post](https://user-images.githubusercontent.com/87821678/152629036-c2583815-3691-4e2b-bbeb-de86e8d8331d.PNG)
+<br/>
+### - 마이페이지<br/>
+![mypage](https://user-images.githubusercontent.com/87821678/152629379-eb44b0ff-b5f0-4589-9698-61fa4ab076e2.PNG)
 
 ## 🌻 Getting Started
 ### React
