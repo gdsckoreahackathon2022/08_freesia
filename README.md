@@ -23,7 +23,7 @@
 <br/>
 
 ## 🌻 주요 기능
-### - JWT (Json Web Token)을 활용한 보안 로그인<br/>
+### - JWT (Json Web Token) 를 활용한 보안 로그인<br/>
 ![login](https://user-images.githubusercontent.com/87821678/152628468-a187cb70-2f2d-4e12-855f-c6f7d69c0209.PNG)
 ![signup](https://user-images.githubusercontent.com/87821678/152628470-152778b6-07f5-41d3-8890-54e0c96dcda9.PNG)
 <br/>
