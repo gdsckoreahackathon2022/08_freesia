@@ -4,7 +4,6 @@ import NavBar from "../navbar/Navbar";
 import CenterList from "./CenterList";
 import Map from "./Map";
 import styled from "styled-components";
-import instance from "../jwtlogin/Request";
 import axios from "axios";
 import AuthenticationService from "../jwtlogin/AuthenticationService";
 

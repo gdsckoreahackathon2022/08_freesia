@@ -9,7 +9,6 @@ import {
 import "./Challenge.css";
 import EmojiPicker, { SKIN_TONE_NEUTRAL } from "emoji-picker-react";
 import { Link, useParams } from "react-router-dom";
-import instance from "../jwtlogin/Request";
 import parse from "html-react-parser";
 import axios from "axios";
 

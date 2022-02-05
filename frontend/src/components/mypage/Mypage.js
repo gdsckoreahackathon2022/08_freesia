@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import NavBar from "../navbar/Navbar";
 import styles from "./Mypage.module.css";
-import instance from "../jwtlogin/Request";
 import axios from "axios";
 import AuthenticationService from "../jwtlogin/AuthenticationService";
 
 function MyPage() {
   const [nickname, setNickname] = useState();
   const [edit, setEdit] = useState(false);
+  const token = localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   console.log("재실행");
 

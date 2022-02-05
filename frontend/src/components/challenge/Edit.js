@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import Navbar from "../navbar/Navbar";
 import "./Challenge.css";
-import instance from "../jwtlogin/Request";
 import axios from "axios";
 
 export default function Edit() {
@@ -57,7 +56,7 @@ export default function Edit() {
           const body = new FormData();
           loader.file.then((file) => {
             body.append("files", file);
-            instance
+            axios
               .post(`/${UPLOAD_ENDPOINT}`, {
                 body: body,
               })

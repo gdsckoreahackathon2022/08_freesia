@@ -5,7 +5,6 @@ import { faEdit, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Challenge.css";
 import freesia from "../../img/freesia.png";
 import { useEffect, useState } from "react";
-import instance from "../jwtlogin/Request";
 import parse from "html-react-parser";
 import axios from "axios";
 

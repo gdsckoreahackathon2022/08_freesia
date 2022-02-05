@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./Challenge.css";
 import axios from "axios";
-import instance from "../jwtlogin/Request";
 
 export default function Create() {
   const [content, setContent] = useState("");
@@ -41,7 +40,7 @@ export default function Create() {
           const body = new FormData();
           loader.file.then((file) => {
             body.append("files", file);
-            instance
+            axios
               .post(`/${UPLOAD_ENDPOINT}`, {
                 body: body,
               })
