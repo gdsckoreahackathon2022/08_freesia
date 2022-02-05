@@ -28,7 +28,7 @@
 ![signup](https://user-images.githubusercontent.com/87821678/152628470-152778b6-07f5-41d3-8890-54e0c96dcda9.PNG)
 <br/>
 ### - 재교육/취업 기관 지도 API 서비스 - Google Map API, 크롤링 활용<br/>
-![center](https://user-images.githubusercontent.com/87821678/152629040-ecbe9188-6563-4bd8-a031-164483a79f0f.PNG)
+![center](https://user-images.githubusercontent.com/87821678/152629203-ae7c91d1-bfef-4a9c-a317-3d0709d1a1fe.PNG)
 <br/>
 ### - 챌린지 게시판을 통한 동기부여<br/>
 ![create](https://user-images.githubusercontent.com/87821678/152629038-88b75100-9cbe-4e57-9d1e-6995a87ebdec.PNG)
