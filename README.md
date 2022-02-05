@@ -30,3 +30,18 @@
 ## Team freesia🌻
 - 백엔드: 김가경, 최가희
 - 프론트엔드: 김민지, 서묘진
+
+## Getting Started
+### React
+```
+cd frontend
+npm install
+npm start
+```
+
+### Spring boot
+```
+cd backend/imyourfreesia
+```
+`src/main/java/com/freesia/imyourfreesia/ImyourfreesiaApplication.java` 열어 main 함수 run
+
