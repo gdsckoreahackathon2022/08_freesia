@@ -11,6 +11,9 @@ import axios from "axios";
 
 export default function List() {
   const [posts, setPosts] = useState([]);
+  const token = localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+
   useEffect(() => {
     axios
       .get("/posts")

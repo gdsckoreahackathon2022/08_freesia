@@ -10,6 +10,8 @@ import instance from "../jwtlogin/Request";
 export default function Create() {
   const [content, setContent] = useState("");
   const uid = localStorage.getItem("authenticatedUser");
+  const token = localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   // 서버에 등록
   const submitHandler = (e) => {

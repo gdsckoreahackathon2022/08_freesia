@@ -17,6 +17,9 @@ export default function Detail() {
   // id에 맞는 게시글 불러오기
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
+  const token = localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+
   useEffect(() => {
     axios
       .get("/posts")
